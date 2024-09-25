@@ -5,6 +5,8 @@ import ApplicationViews from "./components/ApplicationViews";
 import { useEffect } from 'react';
 import Authorize from './components/Authorize';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
 
