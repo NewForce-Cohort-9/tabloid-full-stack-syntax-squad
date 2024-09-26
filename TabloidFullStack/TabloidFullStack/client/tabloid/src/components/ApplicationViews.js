@@ -16,7 +16,6 @@ const ApplicationViews = () => {
 
  return(
       <Routes>
-        <Route path="/" element={<Hello />} />
 
         <Route path="/" element={<PostList />} />
 
