@@ -1,10 +1,10 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { useNavigate } from "react-router-dom";
-import { register } from "../Managers/UserProfileManager";
+import { register } from "./Managers/UserProfileManager";
 
 
-export default function Register({setIsLoggedIn}) {
+export default function Register({ setIsLoggedIn }) {
   const navigate = useNavigate();
 
   const [firstName, setFirstName] = useState();
@@ -27,7 +27,7 @@ export default function Register({setIsLoggedIn}) {
           navigate('/')
         });
     }
- };
+  };
 
   return (
     <Form onSubmit={registerClick}>

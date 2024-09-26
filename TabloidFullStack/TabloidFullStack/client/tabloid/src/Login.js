@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { useNavigate, Link } from "react-router-dom";
-import { login } from "../Managers/UserProfileManager";
+import { login } from "./Managers/UserProfileManager";
 
-export default function Login({setIsLoggedIn}) {
+export default function Login({ setIsLoggedIn }) {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState();
@@ -11,16 +11,16 @@ export default function Login({setIsLoggedIn}) {
 
   const loginSubmit = (e) => {
     e.preventDefault();
-    login({email, password})
-      .then(r =>{
-      if(r){
-      setIsLoggedIn(true)
-      navigate('/')
-      }
-      else{
-        alert("Invalid email or password")
-      }
-    })
+    login({ email, password })
+      .then(r => {
+        if (r) {
+          setIsLoggedIn(true)
+          navigate('/')
+        }
+        else {
+          alert("Invalid email or password")
+        }
+      })
   };
 
   return (
