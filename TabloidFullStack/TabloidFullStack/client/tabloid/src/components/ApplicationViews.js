@@ -18,16 +18,20 @@ const ApplicationViews = () => {
       <Routes>
         <Route path="/" element={<Hello />} />
 
+        <Route path="/" element={<PostList />} />
+
+        <Route path="/post/:id" element={<PostDetail />} />
+
        <Route path="/tags/create" element= {<CreateTagForm/>} /> 
 
         {/* <Route path="/tags/:delete" element= {<TagForm/>} />  */}
 
         <Route path="/tags/:update" element= {<UpdateTagForm/>} /> 
 
-        <Route path="/tags" element= {<TagList/>}/> 
+        <Route path="/tags" element= {<TagList/>} /> 
 
 
-     <Route path="/tags/:id" element= {<TagDetails/>}/> 
+     <Route path="/tags/:id" element= {<TagDetails/>} /> 
 
 
 
