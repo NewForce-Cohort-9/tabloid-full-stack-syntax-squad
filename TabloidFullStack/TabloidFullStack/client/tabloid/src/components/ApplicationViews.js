@@ -16,7 +16,10 @@ const ApplicationViews = () => {
 
  return(
       <Routes>
-        <Route path="/" element={<Hello />} />
+
+        <Route path="/" element={<PostList />} />
+
+        <Route path="/post/:id" element={<PostDetail />} />
 
        <Route path="/tags/create" element= {<CreateTagForm/>} /> 
 
@@ -24,10 +27,10 @@ const ApplicationViews = () => {
 
         <Route path="/tags/:update" element= {<UpdateTagForm/>} /> 
 
-        <Route path="/tags" element= {<TagList/>}/> 
+        <Route path="/tags" element= {<TagList/>} /> 
 
 
-     <Route path="/tags/:id" element= {<TagDetails/>}/> 
+     <Route path="/tags/:id" element= {<TagDetails/>} /> 
 
 
 
@@ -44,3 +47,12 @@ const ApplicationViews = () => {
 // };
 
 export default ApplicationViews;
+
+
+
+
+
+
+
+
+
