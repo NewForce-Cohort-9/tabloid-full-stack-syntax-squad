@@ -1,6 +1,6 @@
 
 using TabloidFullStack.Repositories;
-
+//test
 namespace TabloidFullStack
 {
     public class Program
@@ -15,6 +15,7 @@ namespace TabloidFullStack
             builder.Services.AddTransient<IUserRepository, UserRepository>();
             builder.Services.AddTransient<ITagsRepository, TagsRepository>();
 
+            builder.Services.AddTransient<IPostRepository, PostRepository>();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
