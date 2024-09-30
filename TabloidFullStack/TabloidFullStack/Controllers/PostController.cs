@@ -23,7 +23,7 @@ namespace TabloidFullStack.Controllers
             return Ok(posts);
         }
 
-        // GET: api/Post/5
+        // GET: api/Post/{id}
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -35,7 +35,7 @@ namespace TabloidFullStack.Controllers
             return Ok(post);
         }
 
-        // GET: api/Post/user/5
+        // GET: api/Post/user/{userId}
         [HttpGet("user/{userId}")]
         public IActionResult GetByUser(int userId)
         {
