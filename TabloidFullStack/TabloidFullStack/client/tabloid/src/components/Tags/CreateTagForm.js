@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { addTag, updateTag } from "../../Managers/TagManager.js";
+import { createTag, updateTag } from "../../Managers/TagManager.js";
 import { getByDisplayValue } from "@testing-library/react";
 import TagPageHeader from "./TagPageHeader.js";
 import { Input } from "reactstrap";
@@ -18,7 +18,7 @@ export const CreateTagForm = () => {
             navigate("/tags");
 
         } else {
-            const newTag = await addTag({name: tagName});
+            const newTag = await createTag({name: tagName});
             if(newTag) navigate("/tags"); 
         }
     };
@@ -34,7 +34,7 @@ export const CreateTagForm = () => {
 
     return (
         <>
-          <TagPageHeader title={tagId ? "Edit tag" : "Create Tag"} />
+          <TagPageHeader title={tagId ? "Edit tag" : "Name Your Tag"} />
           <div className="container pt-5">
             <div className="container d-flex align-items-center justify-content-center flex-column">
               <form onSubmit={handleTagSubmit}>
@@ -51,11 +51,17 @@ export const CreateTagForm = () => {
                 />
     
                 <button
+                  
                   type="submit"
                   className="btn mt-4 btn-primary mx-1 text-white w-100"
                 >
                   Save
                 </button>
+               
+               
+               
+               
+               
                 <button
                   onClick={() => navigate("/tags")}
                   type="button"

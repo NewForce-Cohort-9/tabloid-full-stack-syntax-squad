@@ -5,7 +5,6 @@ import { TagDetails } from "./Tags/TagDetails.js";
 import { Route, Routes, } from "react-router-dom";  // Import Routes and Route
 import PostList from "./PostList";
 import { TagList } from "./Tags/TagList.js";
-import { UpdateTagForm } from "./Tags/UpdateTagForm.js";
 import PostDetail from "./PostDetail.js";
 
 const ApplicationViews = () => {
@@ -25,7 +24,7 @@ const ApplicationViews = () => {
 
         {/* <Route path="/tags/:delete" element= {<TagForm/>} />  */}
 
-        <Route path="/tags/:update" element= {<UpdateTagForm/>} /> 
+        <Route path="/tags/:update" element= {<CreateTagForm/>} /> 
 
         <Route path="/tags" element= {<TagList/>} /> 
 

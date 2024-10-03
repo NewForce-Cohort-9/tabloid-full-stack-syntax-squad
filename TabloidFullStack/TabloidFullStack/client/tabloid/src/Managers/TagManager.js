@@ -8,9 +8,9 @@ export const getAllTags = () => {
 
 };
 
-export const addTag = (singleTag) => {
+export const createTag = (singleTag) => {
     return fetch(baseUrl, {
-        method: "TAG", 
+        method: "Post", 
         headers: {
             "Content-Type": "application/json",
         }, 
@@ -37,3 +37,4 @@ export const updateTag = (tag) => {
 export const getTag = (id) => {
     return fetch(`${baseUrl}/GetTagById/${id}`).then((res) => res.json());
 };
+

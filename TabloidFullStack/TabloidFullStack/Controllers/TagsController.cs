@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TabloidFullStack.Models;
 using TabloidFullStack.Repositories;
 
 namespace TabloidFullStack.Controllers
@@ -23,7 +24,15 @@ namespace TabloidFullStack.Controllers
             return Ok(_tagsRepository.GetAll());
         }
 
+        [HttpPost]
+        public IActionResult Post(Tags tags)
+        {
+          
+            _tagsRepository.Add(tags);
+            return CreatedAtAction("Get", new { id = tags.Id }, tags);
+        }
 
-        
+
+
     }
 }

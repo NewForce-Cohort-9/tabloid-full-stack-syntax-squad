@@ -64,12 +64,11 @@ namespace TabloidFullStack.Repositories
                 using (var cmd = conn.CreateCommand())
                 {
                     cmd.CommandText = @"
-                                INSERT INTO Tag (Id, Name)
-                                OUTPUT INSERTED .ID 
-                                VALUES (@PostId, @Id, @Name)
+                                INSERT INTO Tag ( Name)
+                                OUTPUT INSERTED.Id 
+                                VALUES ( @Name)
                                ";
 
-                    DbUtils.AddParameter(cmd, "@Id", tags.Id);
                     DbUtils.AddParameter(cmd, "@Name", tags.Name);
 
                     tags.Id = (int)cmd.ExecuteScalar();
