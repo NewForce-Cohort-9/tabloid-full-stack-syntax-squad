@@ -6,7 +6,8 @@ const PostDetail = () => {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/Post/${id}`)  // Adjust API URL as needed
+    // Use the correct API URL
+    fetch(`https://localhost:5001/api/Post/${id}`)
       .then((response) => response.json())
       .then((data) => setPost(data))
       .catch((error) => console.error("Error fetching post:", error));
@@ -19,6 +20,8 @@ const PostDetail = () => {
   return (
     <div>
       <h1>{post.title}</h1>
+      {/* Display the header image if it exists */}
+      {post.imageUrl && <img src={post.imageUrl} alt={post.title} />}
       <p>{post.content}</p>
       <p>Published: {new Date(post.publishDateTime).toLocaleDateString()}</p>
       <p>Author: {post.author.displayName}</p>

@@ -26,7 +26,7 @@ const PostList = () => {
             <p>{post.content}</p>
             <p>Published: {new Date(post.publishDateTime).toLocaleDateString()}</p>
             <p>Author: {post.author.displayName}</p>
-            {/* Link to the detail view */}
+            {/* Link to the post detail view */}
             <Link to={`/post/${post.id}`}>Read More</Link>
           </div>
         ))}
